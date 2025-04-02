@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.Server", "StockManagement.Server\StockManagement.Server.csproj", "{DDB74E0F-0260-4F36-A5AE-D93B46600FAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDB74E0F-0260-4F36-A5AE-D93B46600FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB74E0F-0260-4F36-A5AE-D93B46600FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB74E0F-0260-4F36-A5AE-D93B46600FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB74E0F-0260-4F36-A5AE-D93B46600FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

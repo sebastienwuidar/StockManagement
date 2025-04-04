@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using StockManagement.Server.Models.Enum;
 
 namespace StockManagement.Server.Models;
 
@@ -7,7 +8,7 @@ public class Order
     public int Id { get; set; }
     
     [Required]
-    public Enum Status { get; set; }
+    public StatusEnum Status { get; set; }
     
     [Required]
     [StringLength(50, MinimumLength = 3)]
@@ -23,7 +24,11 @@ public class Order
 
     public IList<Product> Products { get; set; }
     public Customer Customer { get; set; }
-    
+
+    public Order()
+    {
+    }
+
     public Order(string name, Customer customer)
     {
         Name = name;

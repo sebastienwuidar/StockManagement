@@ -25,6 +25,10 @@ public class Address
     [StringLength(50, MinimumLength = 3)]
     public string Country { get; set; }
 
+    public Address()
+    {
+    }
+
     public Address(string street, int number, string city, int postalCode, string country)
     {
         Street = street;

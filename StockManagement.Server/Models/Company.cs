@@ -10,6 +10,10 @@ public class Company
     [StringLength(50, MinimumLength = 3)]
     public string Name { get; set; }
 
+    public Company()
+    {
+    }
+
     public Company(string name)
     {
         Name = name;

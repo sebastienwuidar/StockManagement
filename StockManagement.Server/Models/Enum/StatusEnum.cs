@@ -1,4 +1,4 @@
-﻿namespace StockManagement.Server.Models;
+﻿namespace StockManagement.Server.Models.Enum;
 
 public enum StatusEnum
 {

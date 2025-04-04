@@ -20,6 +20,10 @@ public class Product
     public IList<Order> Orders { get; set; }
     public Company Company { get; set; }
 
+    public Product()
+    {
+    }
+
     public Product(string name, int quantity, double price, Company company)
     {
         Name = name;

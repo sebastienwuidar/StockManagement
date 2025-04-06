@@ -50,7 +50,15 @@ public class ProductController : Controller
         return Ok(product);
     }
 
+    /// <summary>
+    /// Add a product
+    /// </summary>
+    /// <param name="request">product request</param>
+    /// <returns>Return 200 if success, 400 bad request otherwise</returns>
+    /// <response code="201">product created</response>
+    /// <response code="400">invalid request</response>    
     [HttpPost]
+    [Consumes("application/json")]
     public IActionResult Create([FromBody] ProductRequest request)
     {
         var company = _companyRepository.GetCompanyById(request.CompanyId);

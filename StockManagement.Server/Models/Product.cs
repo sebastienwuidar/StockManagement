@@ -32,4 +32,9 @@ public class Product
         Company = company;
         Orders = new List<Order>();
     }
+
+    public void AddOrder(Order order)
+    {
+        Orders.Add(order);
+    }
 }

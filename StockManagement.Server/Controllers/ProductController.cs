@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StockManagement.Server.Infrastructure.DTOs;
 using StockManagement.Server.Infrastructure.Repositories;
+using StockManagement.Server.Models;
+using StockManagement.Server.Models.Requests;
 
 namespace StockManagement.Server.Controllers;
 
@@ -9,10 +11,12 @@ namespace StockManagement.Server.Controllers;
 public class ProductController : Controller
 {
     private readonly ProductRepository _productRepository;
+    private readonly CompanyRepository _companyRepository;
 
-    public ProductController(ProductRepository productRepository)
+    public ProductController(ProductRepository productRepository, CompanyRepository companyRepository)
     {
         _productRepository = productRepository;
+        _companyRepository = companyRepository;
     }
 
     /// <summary>
@@ -45,4 +49,25 @@ public class ProductController : Controller
         
         return Ok(product);
     }
+
+    [HttpPost]
+    public IActionResult Create([FromBody] ProductRequest request)
+    {
+        var company = _companyRepository.GetCompanyById(request.CompanyId);
+
+        if (company == null)
+        {
+            return NotFound();
+        }
+        
+        return _productRepository.AddProduct(request, company) ? Ok() : BadRequest();
+    }
+
+    // public IActionResult Update([FromBody] ProductDto productDto)
+    // {
+    // }
+    //
+    // public IActionResult Delete([FromRoute] int id)
+    // {
+    // }
 }
